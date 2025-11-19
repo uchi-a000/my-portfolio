@@ -7,15 +7,18 @@ export function AboutSection() {
             About me
           </h2>
           <div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm">
-            <p className="text-lg leading-relaxed text-card-foreground">
-              バックエンドとフロントエンドの両方の開発をしています。
-              <br />
-              プログラミングスクールで9ヶ月間、HTML・CSS・PHP・Laravelの基礎を学び、模擬案件を通じて実践に近い経験を積みました。
-              <br />
-              現在は Next.js と Laravelを使用したWebアプリケーションの開発業務に従事しており、要件定義・設計・開発・運用など、実務を通して幅広い工程に取り組んでいます。
-            </p>
+            <div className="text-lg leading-relaxed text-card-foreground">
+              <p>バックエンドとフロントエンドの両方の開発をを行っています。</p>
+              <p>
+                2024年にプログラミングスクールで9ヶ月間、HTML・CSS・PHP・Laravelの基礎を学び、模擬案件を通じて実践に近い経験を積みました。
+              </p>
+              <p>
+                現在は Next.js と
+                Laravelを使用したWebアプリケーションの開発業務に従事しており、要件定義・設計・開発・運用など、実務を通して幅広い工程に取り組んでいます。
+              </p>
+            </div>
             <p className="text-lg leading-relaxed text-card-foreground mt-4">
-              コードを書くうえで大切にしているのは、「理想的な構造」と「わかりやすさ」。
+              コードを書くうえで大切にしているのは、「理想的な構造」と「わかりやすさ」です。
               <br />
               一つひとつの課題に丁寧に向き合うことを意識し、信頼されるエンジニアを目指しています。
             </p>

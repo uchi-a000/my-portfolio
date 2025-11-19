@@ -1,16 +1,23 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+});
+const _geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "フルスタックWeb開発者のポートフォリオサイト。学習記録や制作実績を掲載しています。",
-  generator: "Next.js + TypeScript + Tailwind CSS",
+  title: "プログラマー ポートフォリオ",
+  description:
+    "フルスタックWebデベロッパーのポートフォリオサイト | Next.js & Laravel",
+  generator: "v0.app",
   icons: {
     icon: [
       {
@@ -28,19 +35,21 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="ja">
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${_geist.variable} ${_geistMono.variable}font-sans antialiased text-gray-700`}
+      >
         {children}
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

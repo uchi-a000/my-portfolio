@@ -12,6 +12,7 @@ export type Project = {
     backend: string;
     frontend: string;
     tools: string;
+    // gitHubUrl: string;
   };
 };
 

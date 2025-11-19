@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -16,24 +16,25 @@ export function HeroSection() {
           </div>
         </div>
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-2xl md:text-4xl lg:text-3xl font-bold mb-4 text-balance">
-            はじめまして！
+          <h1 className="text-2xl md:text-4xl lg:text-3xl  mb-4 font-normal text-balance">
+            はじめまして。
             <br className="md:hidden" />
-            <span className="text-primary font-semibold">内田ありさ</span>と申します！
+            <span className="text-primary font-normal">内田ありさ</span>
+            と申します。
           </h1>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            ポートフォリオをご覧いただき、
-            <br className="md:hidden" />
-            ありがとうございます。
-            <br />
-            スキューバーダイビングと美味しいお酒が好きな
-            フリーランスプログラマーのポートフォリオです。
-            <br />
-            どうぞごゆっくりご覧ください。
-            <br />
-          </p>
+          <div className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <p>ご覧いただきありがとうございます！</p>
+            <p>フルスタックWeb開発が可能なフリーランスエンジニアです。</p>
+            <p>
+              Next.js と Laravel
+              を用いた開発に携わっており、PHP や TypeScript などを扱っています。
+            </p>
+            <p>
+              このポートフォリオでは、学習記録や制作実績をご覧いただけます。
+            </p>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
