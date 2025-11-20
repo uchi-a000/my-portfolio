@@ -47,14 +47,15 @@ function SkillLevel({ level = 0 }: { level?: number }) {
   return (
     <div className="flex gap-1">
       {SKILL_LEVELS.map((dot) => (
-      <div
-        key={dot}
-        className={`w-2 h-2 rounded-full ${dot <= level ? "bg-primary" : "bg-muted"
-        }`}
-      />
+        <div
+          key={dot}
+          className={`w-2 h-2 rounded-full ${
+            dot <= level ? "bg-primary" : "bg-muted"
+          }`}
+        />
       ))}
     </div>
-  )
+  );
 }
 
 const levelDescriptions = [
@@ -118,11 +119,13 @@ export function SkillsSection() {
                           </span>
                           {skill.level && <SkillLevel level={skill.level} />}
                         </div>
-                        {skill.experience && category !== "tools" && (
-                          <span className="text-xs text-muted-foreground">
-                            {skill.experience}
-                          </span>
-                        )}
+                        {skill.experience &&
+                          skill.level &&
+                          category !== "tools" && (
+                            <span className="text-xs text-muted-foreground">
+                              {skill.experience}
+                            </span>
+                          )}
                       </div>
                     ))}
                   </div>

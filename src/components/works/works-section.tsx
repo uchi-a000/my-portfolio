@@ -1,16 +1,35 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import Image from "next/image";
 import { projects } from "./projects";
 
 export function WorksSection() {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null)
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [expandedImageIndex, setExpandedImageIndex] = useState<number>(0);
 
-  const currentProject = projects.find((p) => p.id === selectedProject)
+  const currentProject = projects.find((p) => p.id === selectedProject);
+
+  // Escでモーダル閉じる
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+        setExpandedImageIndex(0);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
 
   return (
     <section className="bg-accent/30 py-16 md:py-20">
@@ -25,7 +44,10 @@ export function WorksSection() {
               <Card
                 key={project.id}
                 className="border-2 shadow-lg overflow-hidden cursor-pointer transition-all hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
-                onClick={() => setSelectedProject(project.id)}
+                onClick={() => {
+                  setSelectedProject(project.id);
+                  setExpandedImageIndex(0);
+                }}
               >
                 <div className="relative h-48 md:h-56 bg-gradient-to-br from-primary/20 to-secondary/20">
                   <Image
@@ -43,107 +65,121 @@ export function WorksSection() {
             ))}
           </div>
 
+          {/* モーダル */}
           <Dialog
             open={selectedProject !== null}
-            onOpenChange={() => setSelectedProject(null)}
+            onOpenChange={() => {
+              setSelectedProject(null);
+            }}
           >
-            <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-              {currentProject && (
-                <>
-                  <DialogHeader>
-                    <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <DialogTitle className="text-2xl">
-                        {currentProject.title}
-                      </DialogTitle>
-                      <Badge variant="outline" className="text-sm">
-                        {currentProject.subtitle}
-                      </Badge>
-                    </div>
-                    <DialogDescription className="text-lg">
-                      {currentProject.description}
-                    </DialogDescription>
-                  </DialogHeader>
+            {currentProject && (
+              <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                  <div className="flex flex-wrap items-center gap-3 mb-2">
+                    <DialogTitle className="text-2xl">
+                      {currentProject.title}
+                    </DialogTitle>
+                    <Badge variant="outline" className="text-sm">
+                      {currentProject.subtitle}
+                    </Badge>
+                  </div>
+                  <DialogDescription className="text-lg">
+                    {currentProject.description}
+                  </DialogDescription>
+                </DialogHeader>
 
-                  <div className="space-y-6 mt-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      {currentProject.images.map((image, index) => (
+                {/* メイン画像 */}
+                <div className="relative w-full h-[400px] sm:h-[500px] my-4 border rounded-lg overflow-hidden">
+                  <Image
+                    src={currentProject.images[expandedImageIndex]}
+                    alt={`拡大画像`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+
+                {/* サムネイル */}
+                <div className="flex gap-2 justify-center mb-4">
+                  {currentProject.images.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className={`relative w-20 h-20 border rounded cursor-pointer overflow-hidden ${
+                        idx === expandedImageIndex
+                          ? "border-primary"
+                          : "border-transparent"
+                      }`}
+                      onClick={() => setExpandedImageIndex(idx)}
+                    >
+                      <Image
+                        src={img}
+                        alt={`サムネイル${idx + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* 詳細説明 */}
+                <div className="space-y-6 mt-4">
+                  <p className="text-base leading-relaxed">
+                    {currentProject.fullDescription}
+                  </p>
+
+                  <div>
+                    <h3 className="font-semibold text-lg mb-3 text-primary">
+                      開発手法
+                    </h3>
+                    <Badge className="text-sm px-4 py-2">
+                      {currentProject.methodology}
+                    </Badge>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-lg mb-3 text-primary">
+                      主な開発
+                    </h3>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {currentProject.features.map((feature) => (
                         <div
-                          key={index}
-                          className="relative h-40 rounded-lg overflow-hidden border-2"
+                          key={feature.label}
+                          className="flex items-center gap-2 bg-muted/50 rounded-lg p-3"
                         >
-                          <Image
-                            src={image || "/placeholder.svg"}
-                            alt={`${currentProject.title} スクリーンショット ${
-                              index + 1
-                            }`}
-                            fill
-                            className="object-cover"
-                          />
+                          <span className="text-xl">{feature.icon}</span>
+                          <span className="text-sm">{feature.label}</span>
                         </div>
                       ))}
                     </div>
+                  </div>
 
-                    <p className="text-base leading-relaxed">
-                      {currentProject.fullDescription}
-                    </p>
-
-                    <div>
-                      <h3 className="font-semibold text-lg mb-3 text-primary">
-                        開発手法
-                      </h3>
-                      <Badge className="text-sm px-4 py-2">
-                        {currentProject.methodology}
-                      </Badge>
-                    </div>
-
-                    <div>
-                      <h3 className="font-semibold text-lg mb-3 text-primary">
-                        主な開発
-                      </h3>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {currentProject.features.map((feature) => (
-                          <div
-                            key={feature.label}
-                            className="flex items-center gap-2 bg-muted/50 rounded-lg p-3"
-                          >
-                            <span className="text-xl">{feature.icon}</span>
-                            <span className="text-sm">{feature.label}</span>
-                          </div>
-                        ))}
+                  <div>
+                    <h3 className="font-semibold text-lg mb-3 text-primary">
+                      使用言語
+                    </h3>
+                    <div className="space-y-2">
+                      <div>
+                        <span className="font-medium text-sm">Backend：</span>
+                        <span className="text-sm text-muted-foreground ml-2">
+                          {currentProject.techStack.backend}
+                        </span>
                       </div>
-                    </div>
-
-                    <div>
-                      <h3 className="font-semibold text-lg mb-3 text-primary">
-                        使用言語
-                      </h3>
-                      <div className="space-y-2">
-                        <div>
-                          <span className="font-medium text-sm">Backend：</span>
-                          <span className="text-sm text-muted-foreground ml-2">
-                            {currentProject.techStack.backend}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-medium text-sm">
-                            Frontend：
-                          </span>
-                          <span className="text-sm text-muted-foreground ml-2">
-                            {currentProject.techStack.frontend}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-medium text-sm">Tools：</span>
-                          <span className="text-sm text-muted-foreground ml-2">
-                            {currentProject.techStack.tools}
-                          </span>
-                        </div>
+                      <div>
+                        <span className="font-medium text-sm">Frontend：</span>
+                        <span className="text-sm text-muted-foreground ml-2">
+                          {currentProject.techStack.frontend}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="font-medium text-sm">Tools：</span>
+                        <span className="text-sm text-muted-foreground ml-2">
+                          {currentProject.techStack.tools}
+                        </span>
                       </div>
                     </div>
                   </div>
-                </>
-              )}
-            </DialogContent>
+                </div>
+              </DialogContent>
+            )}
           </Dialog>
         </div>
       </div>

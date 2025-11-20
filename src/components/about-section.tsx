@@ -8,7 +8,7 @@ export function AboutSection() {
           </h2>
           <div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm">
             <div className="text-lg leading-relaxed text-card-foreground">
-              <p>バックエンドとフロントエンドの両方の開発をを行っています。</p>
+              <p>バックエンドとフロントエンドの両方の開発を行っています。</p>
               <p>
                 2024年にプログラミングスクールで9ヶ月間、HTML・CSS・PHP・Laravelの基礎を学び、模擬案件を通じて実践に近い経験を積みました。
               </p>

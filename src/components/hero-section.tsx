@@ -26,8 +26,8 @@ export function HeroSection() {
             <p>ご覧いただきありがとうございます！</p>
             <p>フルスタックWeb開発が可能なフリーランスエンジニアです。</p>
             <p>
-              Next.js と Laravel
-              を用いた開発に携わっており、PHP や TypeScript などを扱っています。
+              Next.js と Laravel を用いた開発に携わっており、PHP や TypeScript
+              などを扱っています。
             </p>
             <p>
               このポートフォリオでは、学習記録や制作実績をご覧いただけます。
