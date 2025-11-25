@@ -14,7 +14,7 @@ export function AboutSection() {
               </p>
               <p>
                 現在は Next.js と
-                Laravelを使用したWebアプリケーションの開発業務に従事しており、要件定義・設計・開発・運用など、実務を通して幅広い工程に取り組んでいます。
+                Laravelを使用したWebアプリケーションの開発業務に従事しており、要件定義・設計・開発・運用など、実務を通して幅広い工程に参画しながら、日々学んでおります。
               </p>
             </div>
             <p className="text-lg leading-relaxed text-card-foreground mt-4">
