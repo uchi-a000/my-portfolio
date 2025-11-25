@@ -89,11 +89,12 @@ export function WorksSection() {
                 </DialogHeader>
 
                 {/* メイン画像 */}
-                <div className="relative w-full h-[400px] sm:h-[500px] my-4 border rounded-lg overflow-hidden">
+                <div className="relative w-full h-[250px] sm:h-[400px] md:h-[500px] my-4 overflow-hidden">
                   <Image
                     src={currentProject.images[expandedImageIndex]}
                     alt={`拡大画像`}
                     fill
+                    sizes="(max-width: 768px) 90vw, 60vw"
                     className="object-contain"
                   />
                 </div>
@@ -103,11 +104,13 @@ export function WorksSection() {
                   {currentProject.images.map((img, idx) => (
                     <div
                       key={idx}
-                      className={`relative w-20 h-20 border rounded cursor-pointer overflow-hidden ${
-                        idx === expandedImageIndex
-                          ? "border-primary"
-                          : "border-transparent"
-                      }`}
+                      className={`
+                        relative w-14 h-16 sm:w-20 sm:h-20 border rounded cursor-pointer overflow-hidden
+                        ${
+                          idx === expandedImageIndex
+                            ? "border-primary"
+                            : "border-transparent"
+                        }`}
                       onClick={() => setExpandedImageIndex(idx)}
                     >
                       <Image
@@ -173,6 +176,25 @@ export function WorksSection() {
                         <span className="font-medium text-sm">Tools：</span>
                         <span className="text-sm text-muted-foreground ml-2">
                           {currentProject.techStack.tools}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold text-lg mt-3 mb-3 text-primary">
+                        GitHub
+                      </h3>
+                      <div>
+                        <span className="font-medium text-sm">URL：</span>
+                        <span className="text-sm text-muted-foreground ml-2">
+                          <a
+                            href={currentProject.gitHub}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-blue-600 underline ml-2 hover:opacity-80"
+                          >
+                            {currentProject.gitHub}
+                          </a>
                         </span>
                       </div>
                     </div>
