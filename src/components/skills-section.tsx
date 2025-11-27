@@ -26,7 +26,7 @@ const skills: {
   ],
   frontend: [
     { name: "JavaScript", level: 3, experience: "6ヶ月" },
-    { name: "TypeScript", level: 3, experience: "6ヶ月" },
+    { name: "TypeScript", level: 2, experience: "6ヶ月" },
     { name: "Next.js", level: 3, experience: "6ヶ月" },
     { name: "React", level: 3, experience: "6ヶ月" },
     { name: "Tailwind CSS", level: 2, experience: "6ヶ月" },

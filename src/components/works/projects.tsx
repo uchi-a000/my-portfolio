@@ -1,7 +1,16 @@
 import { ReactNode } from "react";
-import { IoMdLogIn } from "react-icons/io";
-import { FaSearch, FaRegQuestionCircle } from "react-icons/fa";
+import { IoMdLogIn, IoMdHeart } from "react-icons/io";
+import {
+  FaSearch,
+  FaRegQuestionCircle,
+  FaQrcode,
+  FaRocketchat,
+  FaRegFile,
+} from "react-icons/fa";
 import { RiAdminFill } from "react-icons/ri";
+import { MdPostAdd } from "react-icons/md";
+import { BsFiletypeCsv } from "react-icons/bs";
+import { PiBugDroid } from "react-icons/pi";
 
 export type Project = {
   id: number;
@@ -64,13 +73,13 @@ export const projects: Project[] = [
     ],
     description: "Webアプリケーション開発",
     fullDescription:
-      "プログラミングスクールの学習で作成した飲食店予約システムです。",
+      "プログラミングスクールの課題として作成した飲食店予約システムです。ユーザー向けには、予約機能・お気に入り・口コミ投稿・マイページでの予約変更など、実際のサービスに近い UI/UX を意識して実装しました。さらに、管理者と店舗代表者で権限を分け、表示メニューや操作範囲が異なる管理画面も構築しました。QRコードの発行やStripeによる決済機能、CSVインポートなど、学習の枠を超えて実務に近い開発を意識したプロジェクトです。",
     methodology: "個人開発",
     features: [
-      { label: "予約とお気に入り機能", icon: <IoMdLogIn /> },
-      { label: "口コミ投稿・閲覧", icon: <FaRegQuestionCircle /> },
-      { label: "QRコード発行・Stripe決済", icon: <RiAdminFill /> },
-      { label: "csvインポート", icon: <FaSearch /> },
+      { label: "予約とお気に入り機能", icon: <IoMdHeart /> },
+      { label: "口コミ投稿・閲覧", icon: <MdPostAdd /> },
+      { label: "QRコード発行・Stripe決済", icon: <FaQrcode /> },
+      { label: "csvインポート", icon: <BsFiletypeCsv /> },
     ],
     techStack: {
       backend: "Laravel, MySQL, Docker & Docker Compose",
@@ -81,84 +90,45 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "フリマアプリ",
-    subtitle: "学習",
-    thumbnail: "/",
-    images: [
-      "/reservation/home.png",
-      "/reservation/my_page.png",
-      "/reservation/admin.png",
-      "/reservation/shop.png",
-    ],
-    description: "Webアプリケーション開発",
+    title: "MyPortfolio",
+    subtitle: "",
+    thumbnail: "/portfolio.png",
+    images: ["/portfolio.png"],
+    description: "ポートフォリオ",
     fullDescription:
-      "プログラミングスクールの学習で作成した飲食店予約システムです。",
+      "生成AI（v0）を活用して制作した本ポートフォリオです。デザインやレイアウトの大枠はAIに生成してもらいながら、使いづらい部分や表現が不自然な箇所は自分で調整し、随時ブラッシュアップしています。Next.jsを使用し、学習のアウトプットを兼ねてUI・UXの改善やコンポーネント設計にも取り組んでいます。",
     methodology: "個人開発",
     features: [
-      { label: "予約とお気に入り機能", icon: <IoMdLogIn /> },
-      { label: "口コミ投稿・閲覧", icon: <FaRegQuestionCircle /> },
-      { label: "QRコード発行・Stripe決済", icon: <RiAdminFill /> },
-      { label: "csvインポート", icon: <FaSearch /> },
+      { label: "インフラまわりアーキテクチャー", icon: <FaRegFile /> },
+      { label: "自分でなにか機能つけてのせる", icon: <FaRegFile /> },
     ],
     techStack: {
-      backend: "Laravel, MySQL, Docker & Docker Compose",
-      frontend: "未使用",
-      tools: "VSCode, GitHub",
+      backend: "未使用",
+      frontend: "Next.js",
+      tools: "v0, cursor, GitHub",
     },
-    gitHub: "https://github.com/uchi-a000/ReservationSystem",
+    gitHub: "https://github.com/uchi-a000/my-portfolio",
   },
   {
     id: 4,
-    title: "Portfolio",
-    subtitle: "学習",
-    thumbnail: "/",
-    images: [
-      "/reservation/home.png",
-      "/reservation/my_page.png",
-      "/reservation/admin.png",
-      "/reservation/shop.png",
-    ],
-    description: "Webアプリケーション開発",
-    fullDescription:
-      "プログラミングスクールの学習で作成した飲食店予約システムです。",
-    methodology: "個人開発",
-    features: [
-      { label: "予約とお気に入り機能", icon: <IoMdLogIn /> },
-      { label: "口コミ投稿・閲覧", icon: <FaRegQuestionCircle /> },
-      { label: "QRコード発行・Stripe決済", icon: <RiAdminFill /> },
-      { label: "csvインポート", icon: <FaSearch /> },
-    ],
-    techStack: {
-      backend: "Laravel, MySQL, Docker & Docker Compose",
-      frontend: "未使用",
-      tools: "VSCode, GitHub",
-    },
-    gitHub: "https://github.com/uchi-a000/ReservationSystem",
-  },
-  {
-    id: 5,
-    title: "学習アプリ",
+    title: "学習管理システム",
     subtitle: "実務Sample",
-    thumbnail: "/modern-learning-management-app-interface.jpg",
-    images: [
-      "/modern-learning-management-app-interface.jpg",
-      "/modern-learning-management-app-interface.jpg",
-      "/modern-learning-management-app-interface.jpg",
-    ],
+    thumbnail: "",
+    images: [""],
     description: "Webアプリケーション開発",
     fullDescription:
-      "プログラミングスクールの教材管理アプリの開発をチームで作成しておりました。受講生が教材の閲覧や学習時間の記録、コーチとの面談予約などができるアプリで要件定義、開発、テスト、レビューなどバックエンドとフロントエンド両方の幅広い業務に携わらせていただいております。",
+      "プログラミングスクールの教材管理アプリの開発をチームで作成しております。受講生が教材の閲覧や学習時間の記録、コーチとの面談予約などができるアプリで要件定義、開発、テスト、レビューなどバックエンドとフロントエンド両方の幅広い業務に携わらせていただいております。",
     methodology: "アジャイル開発",
     features: [
-      { label: "チャット機能", icon: "💬" },
-      { label: "休学などの申請フォーム", icon: "📝" },
-      { label: "テスト実装", icon: "🧪" },
-      { label: "バグ対応", icon: "🐛" },
+      { label: "チャット機能", icon: <FaRocketchat /> },
+      { label: "休学などの申請フォーム", icon: <FaRegFile /> },
+      { label: "Unitテスト実装", icon: <FaRegFile /> },
+      { label: "バグ対応", icon: <PiBugDroid /> },
     ],
     techStack: {
-      backend: "Laravel, MySQL, Docker & Docker Compose",
-      frontend: "JavaScript, TypeScript, Next.js, Tailwind CSS, HTML, HeroUI",
-      tools: "VSCode, GitHub",
+      backend: "PHP, Laravel, MySQL, Docker & Docker Compose",
+      frontend: "Node.js, TypeScript, Next.js, Tailwind CSS, HeroUI",
+      tools: "VSCode, GitHub, Jira",
     },
   },
 ];

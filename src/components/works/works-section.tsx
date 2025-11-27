@@ -180,24 +180,26 @@ export function WorksSection() {
                       </div>
                     </div>
 
-                    <div>
-                      <h3 className="font-semibold text-lg mt-3 mb-3 text-primary">
-                        GitHub
-                      </h3>
+                    {currentProject.gitHub && (
                       <div>
-                        <span className="font-medium text-sm">URL：</span>
-                        <span className="text-sm text-muted-foreground ml-2">
-                          <a
-                            href={currentProject.gitHub}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-blue-600 underline ml-2 hover:opacity-80"
-                          >
-                            {currentProject.gitHub}
-                          </a>
-                        </span>
+                        <h3 className="font-semibold text-lg mt-3 mb-3 text-primary">
+                          GitHub
+                        </h3>
+                        <div>
+                          <span className="font-medium text-sm">URL：</span>
+                          <span className="text-sm text-muted-foreground ml-2">
+                            <a
+                              href={currentProject.gitHub}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm text-blue-600 underline ml-2 hover:opacity-80"
+                            >
+                              {currentProject.gitHub}
+                            </a>
+                          </span>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </DialogContent>
