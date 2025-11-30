@@ -89,7 +89,7 @@ export function WorksSection() {
                 </DialogHeader>
 
                 {/* メイン画像 */}
-                <div className="relative w-full h-[250px] sm:h-[400px] md:h-[500px] my-4 overflow-hidden">
+                <div className="relative w-full h-[300px] sm:h-[500px] md:h-[650px] my-4 overflow-hidden">
                   <Image
                     src={currentProject.images[expandedImageIndex]}
                     alt={`拡大画像`}
@@ -125,7 +125,7 @@ export function WorksSection() {
 
                 {/* 詳細説明 */}
                 <div className="space-y-6 mt-4">
-                  <p className="text-base leading-relaxed">
+                  <p className="text-base leading-relaxed whitespace-pre-line">
                     {currentProject.fullDescription}
                   </p>
 
