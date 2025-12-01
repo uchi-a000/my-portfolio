@@ -15,22 +15,22 @@ const skills: {
   tools: Skill[];
 } = {
   backend: [
-    { name: "PHP", level: 3, experience: "6ヶ月" },
-    { name: "Laravel", level: 3, experience: "6ヶ月" },
-    { name: "MySQL", level: 3, experience: "6ヶ月" },
+    { name: "PHP", level: 3, experience: "7ヶ月" },
+    { name: "Laravel", level: 3, experience: "7ヶ月" },
+    { name: "MySQL", level: 3, experience: "7ヶ月" },
     {
       name: "Docker & Docker Compose",
       level: 3,
-      experience: "6ヶ月",
+      experience: "7ヶ月",
     },
   ],
   frontend: [
-    { name: "JavaScript", level: 3, experience: "6ヶ月" },
-    { name: "TypeScript", level: 2, experience: "6ヶ月" },
-    { name: "Next.js", level: 3, experience: "6ヶ月" },
-    { name: "React", level: 3, experience: "6ヶ月" },
-    { name: "Tailwind CSS", level: 2, experience: "6ヶ月" },
-    { name: "HTML/CSS", level: 4, experience: "6ヶ月" },
+    { name: "JavaScript", level: 3, experience: "7ヶ月" },
+    { name: "TypeScript", level: 2, experience: "7ヶ月" },
+    { name: "Next.js", level: 3, experience: "7ヶ月" },
+    { name: "React", level: 3, experience: "7ヶ月" },
+    { name: "Tailwind CSS", level: 2, experience: "7ヶ月" },
+    { name: "HTML/CSS", level: 4, experience: "7ヶ月" },
   ],
   tools: [
     { name: "VSCode" },

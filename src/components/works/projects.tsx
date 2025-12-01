@@ -100,8 +100,8 @@ export const projects: Project[] = [
     methodology: "個人開発",
     features: [
       { label: "アーキテクチャー図作成", icon: <MdOutlineDesignServices /> },
-      { label: "インフラまわり", icon: <FaRegFile /> },
-      { label: "自分でなにか機能つけてのせる", icon: <FaRegFile /> },
+      { label: "Vercel にデプロイ", icon: <FaRegFile /> },
+      { label: "", icon: <FaRegFile /> },
     ],
     techStack: {
       backend: "未使用",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     title: "学習管理システム",
     subtitle: "実務（Sample）",
     thumbnail: "/studyAppB.png",
-    images: ["/studyAppA.png", "/studyAppB.png"],
+    images: ["/studyAppB.png", "/studyAppA.png"],
     description: "Webアプリケーション開発",
     fullDescription:
       "プログラミングスクールの教材管理システムの開発をチームで作成しております。\n受講生が教材の閲覧や学習時間の記録、コーチとの面談予約などができるシステムで、運営・コーチなどの権限によって表示項目や操作範囲も異なります。要件定義、開発、テスト、レビューなどバックエンドとフロントエンド両方の幅広い業務に携わらせていただいております。",
