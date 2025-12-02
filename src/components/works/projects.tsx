@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { IoMdLogIn, IoMdHeart } from "react-icons/io";
+import { IoMdLogIn, IoMdHeart, IoMdBuild } from "react-icons/io";
 import {
   FaSearch,
   FaRegQuestionCircle,
@@ -92,8 +92,8 @@ export const projects: Project[] = [
     id: 3,
     title: "MyPortfolio",
     subtitle: "",
-    thumbnail: "/portfolio.png",
-    images: ["/portfolio.png"],
+    thumbnail: "/portfolio-1.png",
+    images: ["/portfolio-1.png"],
     description: "ポートフォリオ",
     fullDescription:
       "生成AI（v0）を活用して制作した本ポートフォリオです。\nデザインやレイアウトの大枠はAIに生成してもらいながら、使いづらい部分や表現が不自然な箇所は自分で調整し、随時ブラッシュアップしています。Next.jsを使用し、学習のアウトプットを兼ねてUI・UXの改善やコンポーネント設計にも取り組んでいます。",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     features: [
       { label: "アーキテクチャー図作成", icon: <MdOutlineDesignServices /> },
       { label: "Vercel にデプロイ", icon: <FaRegFile /> },
-      { label: "", icon: <FaRegFile /> },
+      { label: "UI/UX 改善とコンポーネント設計", icon: <IoMdBuild /> },
     ],
     techStack: {
       backend: "未使用",

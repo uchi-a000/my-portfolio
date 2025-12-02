@@ -18,9 +18,6 @@ export function HeroSection() {
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-2xl md:text-4xl lg:text-3xl  mb-4 font-normal text-balance">
             はじめまして。
-            <br className="md:hidden" />
-            <span className="text-primary font-normal">内田ありさ</span>
-            と申します。
           </h1>
           <div className="text-base md:text-lg text-muted-foreground leading-relaxed">
             <p>ご覧いただきありがとうございます！</p>

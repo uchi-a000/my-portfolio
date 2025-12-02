@@ -17,11 +17,11 @@ export function AboutSection() {
                 Laravelを使用したWebアプリケーションの開発業務に従事しており、要件定義・設計・開発・運用など、実務を通して幅広い工程に参画しながら、日々学んでおります。
               </p>
             </div>
-            <p className="text-lg leading-relaxed text-card-foreground mt-4">
-              コードを書くうえで大切にしているのは、「理想的な構造」と「わかりやすさ」です。
-              <br />
-              一つひとつの課題に丁寧に向き合うことを意識し、信頼されるエンジニアを目指しています。
-            </p>
+            <div className="text-lg leading-relaxed text-card-foreground mt-4">
+              <p>
+                また、コードを書くうえで大切にしているのは、「理想的な構造」と「わかりやすさ」です。<br /> 一つひとつの課題に丁寧に向き合うことを意識し、信頼されるエンジニアを目指しています。
+              </p>
+            </div>
           </div>
         </div>
       </div>
