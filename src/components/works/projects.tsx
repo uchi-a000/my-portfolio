@@ -100,7 +100,7 @@ export const projects: Project[] = [
     methodology: "個人開発",
     features: [
       { label: "アーキテクチャー図作成", icon: <MdOutlineDesignServices /> },
-      { label: "Vercel にデプロイ", icon: <FaRegFile /> },
+      { label: "GitHub と連携した自動デプロイ（Vercel）", icon: <FaRegFile /> },
       { label: "UI/UX 改善とコンポーネント設計", icon: <IoMdBuild /> },
     ],
     techStack: {

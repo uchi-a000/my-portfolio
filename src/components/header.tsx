@@ -47,9 +47,9 @@ export function Header() {
   };
 
   const navItems = [
-    { id: "about", label: "ABOUT" },
-    { id: "skills", label: "SKILLS" },
     { id: "works", label: "WORKS" },
+    { id: "skills", label: "SKILLS" },
+    { id: "about", label: "ABOUT" },
   ];
 
   return (
