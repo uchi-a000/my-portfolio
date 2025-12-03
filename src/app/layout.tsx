@@ -14,7 +14,7 @@ const _geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "プログラマー ポートフォリオ",
+  title: "Uchida's Portfolio",
   description:
     "フルスタックWebデベロッパーのポートフォリオサイト | Next.js & Laravel",
   generator: "v0.app",
