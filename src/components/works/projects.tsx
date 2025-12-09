@@ -119,7 +119,7 @@ export const projects: Project[] = [
     description: "Webアプリケーション開発",
     fullDescription:
       "プログラミングスクールの教材管理システムの開発をチームで作成しております。\n受講生が教材の閲覧や学習時間の記録、コーチとの面談予約などができるシステムで、運営・コーチなどの権限によって表示項目や操作範囲も異なります。要件定義、開発、テスト、レビューなどバックエンドとフロントエンド両方の幅広い業務に携わらせていただいております。",
-    methodology: "アジャイル開発",
+    methodology: "アジャイル（スクラム）開発",
     features: [
       { label: "チャット機能作成", icon: <FaRocketchat /> },
       { label: "休学などの申請フォーム作成", icon: <FaRegFile /> },
