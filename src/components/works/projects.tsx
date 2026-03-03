@@ -11,6 +11,7 @@ import { RiAdminFill } from "react-icons/ri";
 import { MdPostAdd, MdOutlineDesignServices } from "react-icons/md";
 import { BsFiletypeCsv } from "react-icons/bs";
 import { PiBugDroid } from "react-icons/pi";
+import { FaDatabase } from "react-icons/fa6";
 
 export type Project = {
   id: number;
@@ -112,19 +113,38 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "学習管理システム",
+    title: "学習管理システム（LMS）イメージ",
     subtitle: "実務（Sample）",
-    thumbnail: "/studyAppB.png",
-    images: ["/studyAppB.png", "/studyAppA.png"],
+    thumbnail: "/studyAppSample.png",
+    images: ["/studyAppA.png", "/studyAppSample.png"],
     description: "Webアプリケーション開発",
     fullDescription:
-      "プログラミングスクールの教材管理システムの開発をチームで作成しております。\n受講生が教材の閲覧や学習時間の記録、コーチとの面談予約などができるシステムで、運営・コーチなどの権限によって表示項目や操作範囲も異なります。要件定義、開発、テスト、レビューなどバックエンドとフロントエンド両方の幅広い業務に携わらせていただいております。",
+      "プログラミングスクール向け学習管理システム（LMS）の開発をチームで担当しました。\n\
+        受講生が教材閲覧・学習時間の記録・コーチとの面談予約を行えるほか、運営・コーチ・受講生などのロールに応じて表示内容や操作範囲が切り替わる設計となっています。\n\
+        要件定義から設計、実装、テスト、コードレビュー、運用改善まで一連の工程に携わり、バックエンド・フロントエンド双方の開発を担当しました。",
     methodology: "アジャイル（スクラム）開発",
     features: [
-      { label: "チャット機能作成", icon: <FaRocketchat /> },
-      { label: "休学などの申請フォーム作成", icon: <FaRegFile /> },
-      { label: "Unitテスト実装", icon: <FaRegFile /> },
-      { label: "バグ対応", icon: <PiBugDroid /> },
+      { label: "チャット機能の実装", icon: <FaRocketchat /> },
+      { label: "休学等の申請フォーム機能の実装", icon: <FaRegFile /> },
+      {
+        label: "ロール別認可制御（管理者 / コーチ / 受講生）の実装",
+        icon: <RiAdminFill />,
+      },
+      {
+        label: "レスポンシブ対応を含むUI設計・実装（Next.js / TypeScript）",
+        icon: <MdOutlineDesignServices />,
+      },
+      {
+        label: "LaravelによるAPIおよびビジネスロジック実装",
+        icon: <IoMdBuild />,
+      },
+      {
+        label: "MySQLを用いたDB設計（ER設計・リレーション設計）",
+        icon: <FaDatabase />,
+      },
+      { label: "Unitテストの実装", icon: <FaRegFile /> },
+      { label: "API連携設計およびリファクタリング対応", icon: <IoMdBuild /> },
+      { label: "バグ修正およびパフォーマンス改善対応", icon: <PiBugDroid /> },
     ],
     techStack: {
       backend: "PHP, Laravel, MySQL, Docker & Docker Compose",
