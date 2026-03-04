@@ -16,18 +16,18 @@ const skills: {
 } = {
   backend: [
     { name: "PHP", level: 3, experience: "10ヶ月" },
-    { name: "Laravel", level: 3, experience:"10ヶ月" },
+    { name: "Laravel", level: 4, experience:"10ヶ月" },
     { name: "MySQL", level: 3, experience: "10ヶ月" },
     {
       name: "Docker & Docker Compose",
-      level: 3,
+      level: 4,
       experience: "10ヶ月",
     },
   ],
   frontend: [
     { name: "JavaScript", level: 3, experience: "10ヶ月" },
-    { name: "TypeScript", level: 2, experience: "10ヶ月" },
-    { name: "Next.js", level: 3, experience: "10ヶ月" },
+    { name: "TypeScript", level: 3, experience: "10ヶ月" },
+    { name: "Next.js", level: 4, experience: "10ヶ月" },
     { name: "React", level: 3, experience: "10ヶ月" },
     { name: "Tailwind CSS", level: 2, experience: "10ヶ月" },
     { name: "HTML/CSS", level: 4, experience: "10ヶ月" },
